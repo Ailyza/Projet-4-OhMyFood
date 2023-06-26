@@ -7,6 +7,7 @@
     text-decoration: none;
     color: #000;
     font-weight: bold;
+    list-style: none;
 }
 :root {
     --chiffre-color: #9356dc;
@@ -17,34 +18,29 @@
     /* var(--apparition-color) */
 }
 
-header{
-    width: 100%;
-}
-
+/*************** NAVBAR ***************/
 .nav{
-    margin-bottom: 28px;
+    margin-bottom: 15px;
 }
-
 #logo{
    display: block;
    margin: auto;
-   width: 40%;
-   margin-top: 2%;
+   width: 200px;
+   margin-top: 4%;
 }
-a .fa-solid {
+.nav a .fa-solid {
     position: absolute;
-    top: 2%;
-    left: 2%;
- 
+    top: 24px;
+    left: 23px;
+    color: gray;
 }
+
 /*COEUR*/
 
 .icone {
     display: flex;
     justify-content: end;
     align-items: center;
-  
-    
   }
   #heart-checkbox {
     display: none;
@@ -58,8 +54,6 @@ a .fa-solid {
   #heart-checkbox4{
     display: none;
   }
-
-
 .plein-coeur{
     display: none;
     opacity: 0.5;
@@ -71,8 +65,6 @@ a .fa-solid {
     -moz-text-fill-color: transparent;
 }
 
-
-
 #heart-checkbox:checked + label > i.plein-coeur {
     display: inline-block;
     animation: full 0.5s;
@@ -83,7 +75,7 @@ a .fa-solid {
     display: inline-block;
     animation: full 0.5s;
     opacity: 1;
-  }
+}
 #heart-checkbox3:checked + label > i.plein-coeur {
     display: inline-block;
     animation: full 0.5s;
@@ -94,7 +86,7 @@ a .fa-solid {
     display: inline-block;
     animation: full 0.5s;
     opacity: 1;
-  }
+}
 
   @keyframes full {
     from {
@@ -103,25 +95,25 @@ a .fa-solid {
     to {
       opacity: 1;
     }
-  }
+}
 
     #heart-checkbox:checked + label > i.vide-coeur {
     display: none;
-  }
+}
     #heart-checkbox2:checked + label > i.vide-coeur {
     display: none;
-  }
+}
     #heart-checkbox3:checked + label > i.vide-coeur {
     display: none;
-  }
+}
     #heart-checkbox4:checked + label > i.vide-coeur {
     display: none;
-  }
+}
  /*FIN COEUR*/
 
 img{  
     width: 100%;
-  
+    object-fit: cover;
 }
 #photo{
     height: 300px;
@@ -129,33 +121,29 @@ img{
 
 #restaurants{
     display: flex;
-justify-content: center;
-padding: 5%;
-font-size: large;
-
+    justify-content: center;
+    padding: 5%;
+    font-size: large;
 }
 .menu{
     background-color: rgb(246, 246, 246);
-    border-radius: 50px;
-display: inline-block;
-margin: 0 0 12px 0;
-   width: 100%;
-   margin-top: -40px;/*au dessus de l'image*/
+    border-radius: 50px 50px 0px 0px;
+    display: inline-block;
+    width: 100%;
+    margin-top: -70px;/*au dessus de l'image*/
 }
 h2{
     margin-right: 5%;
     font-family: 'Shrikhand', cursive; 
 }
 h3{
-   
     border-bottom: var(--apparition-color);
     border-bottom-style: solid;
-    width: 10%;
+    width: 45px;
     margin-left: 5%;
-    
+    position: relative;
+    top: 30px;
 }
-
-
 .carte{
     margin-bottom: 48px;
     width: 100%;
@@ -167,40 +155,37 @@ h3{
     width: 100%;
     height: 80px;
     display: flex;
-    justify-content: center;
 }
 .plat button {
-  
     height: 100%;
- 
     padding: 0px;
 }
 .icone
 { 
    font-size: 100%;
 }
-
 .description{
     width: 100%;
-    position: relative ;
+    position: relative;
     line-height: 16px;
     height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
 }
-.description:hover .nom { /*J'ai essayé plusieurs écriture différente mais le problème persiste*/
+.description:hover .nom { 
     width: 60%;
-    transition:  all 0.5;
-    
-   
+    transition:  all 0.5; 
 }
 
-button:focus .prix{
-    transform: translateX(-60px);
-    transition: all 0.6s;
+button:hover .prix{
+    transform: translateX(-80px);
+    transition: all 0.5s;
 }
-button:focus .containerCheck{
-    margin-left: 60%;
-    visibility: visible;
-    animation: checked-animation 0.5s;
+button:hover .check{
+    width: 80px;
+    font-size: 20px;
 }
 button{
     background-color: white;
@@ -216,20 +201,21 @@ button{
     flex-direction: row;
     align-items: center;
     justify-content: space-between; 
-     
-
     position: relative;
     overflow: hidden;
 }
 .nom{
-padding-left: 10px;
-display: flex;
-flex-direction: column;
+    padding-left: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s;
 }
 .nom h4{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    font-weight: bold;
 }
 .nom p{
     overflow: hidden;
@@ -237,26 +223,18 @@ flex-direction: column;
     text-overflow: ellipsis;
 }
 .prix{
-    text-align: right;
     transition: all 0.6s;
-    position: relative;
-    bottom: 43px;
-    right: 5%;
 }
-
-
 .containerCheck{
     visibility: hidden;
     width: 60px;
-   
-    background-color: aqua;
+    background-color: var(--apparition-color);
     border-radius: 0px 15px 15px 0px;
     margin-left :90%;
     transition: all 0.5s;
     display: flex;
     justify-content: center;
     align-items: center;
-
     animation: checked-animation-reverse 0.5s;
     position: absolute;
     right: 0px;
@@ -265,18 +243,28 @@ flex-direction: column;
 }
 
 .check{
-    height: 35%;
-    width: 50%;
-    border-radius: 50px;
-    display: inline-flex;
+    height: 100%;
+    width: 0px;
+    position: absolute;
+    right: 0px;
+    font-size: 0px;
+    display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--apparition-color);
+    color: white;
+    transition: all 0.5s;
+}
+.check .fa-check{
+    border-radius: 50px;
     background-color: white;
+    width: 30%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--apparition-color);
 }
-.check .fa-solid{
-    color: aqua;
-}
-
 #containerBtn{
     display: flex;
     justify-content: center;
@@ -286,7 +274,7 @@ flex-direction: column;
 .commander {
     border-radius: 20px;
     height: 50px;
-    width: 65%;
+    width: 200px;
     background: linear-gradient(to bottom right, var(--second-color), var(--chiffre-color));
     color: white;
     border-style: none;
@@ -301,71 +289,43 @@ flex-direction: column;
 .commander:hover{
     opacity: .7;
 }
-/********FOOTER*********/
-#leFooter h2 {
-
+.footer{
+    width: 100%;
+    background-color: rgb(56, 56, 56);
+    padding: 22px 8px 22px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.footer h2 {
     width: 100%;
     color: white;
     font-family: 'Shrikhand', cursive;
-    padding: 5%;
-}
-
-#leFooter {
-  
-
-
-
-width: 100%;
-    background-color: rgb(53, 53, 53);
-   
-    display: flex;
-    flex-direction: column;
+    font-weight: 400;
+    line-height: 45px;
 }
 .quatreLiens {
-    
-  display: flex;
-  flex-direction: column;
- justify-content: flex-start;    
-
-
-    margin: 0 0 33px 0;
-    padding-left: 25px;
-    
-    gap: 7px;
-
-}
-
-.quatreLiens li{
-    position: relative;
-    width: 100%;
     display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: 500;
 }
-
 .quatreLiens li a {
     color: white;
     font-weight: bold;
     width: 100%;
     display: flex;
     align-items: center;
- 
-    margin-top: -10px;
+    gap: 25px;
 }
-
-#leFooter .fa-solid {
+.mention-contact { 
     color: white;
-  
-   
 }
-
-.iconeFooter a .fa-solid{
-   position: absolute;
-  
-   left: 0%;
-   
-}
-.iconeFooter a{
-    padding-left: 10%;
-    margin-top: 38px;
+footer .fa-solid {
+    width: 10px;
+    height: 13px;
+    color: white;
+    padding: 0%;
 }
 /********keyframe check********/
 
@@ -375,18 +335,17 @@ width: 100%;
         width: 0px;
     }
     to {
-        width: 80px;
+        width: 60px;
     }
 }
 
 @keyframes checked-animation-reverse {
     from{
-        width: 80px;
+        width: 60px;
         visibility: visible;
     }
     to{
         width: 0px;
-      
     }
 }
 /********keyframe apparition menu********/
@@ -402,7 +361,6 @@ width: 100%;
 .carte_Desserts li{
       animation: fadeIn 3s linear, 
     moveUp 3s linear;
-
 }
 
 /*Animation des menus*/
@@ -425,78 +383,62 @@ width: 100%;
     }
 }
 
-/*TABLETTE*/
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait){
-
-
-    h3{
-        width: 6%;
-    }
-    .commander{
-        width: 30%;
-    }
-    }
-
-@media only screen and (min-device-width : 1025px) {
-
+@media screen and (min-width : 1025px){
 
     #logo {
         width: 20%;
+        margin-top: 2%;
+    }
+    .nav a .fa-solid {
+        top: 35px;
     }
     .icone{
         margin-top: 0%;
-        
     }
     #photo {
-        height: 600px;
+        height: 400px;
         object-fit: cover;
     }
-
     .menu{
         width: 70%;
         margin-left: 15%;
-        list-style-type: none;
     }
     .carte{
-        list-style-type: none;
         margin-bottom: 100px;
     }
     h3{
-        width: 5%;
-       
-        margin-bottom: -30px;
+        margin-bottom: 10px;
     }
     #containerBtn{
         padding: 2%;
     }
     .commander{
-        width: 30%;
-        margin-top: -5%;
+        width: 25%;
+        margin: 2px 0px 40px;
     }
-    .quatreLiens{
-        flex-direction: row;
-        justify-content: end;
-        display: flex;
-        justify-content: center;
-        align-items: end;
-        width: 100%;
-        position: relative;
-        left: 15%;
-        bottom: 30px;
-    }
-    #leFooter h2{
-        width: 0%;
-        margin-right: 10%;
-    }
-    #leFooter{
-        flex-direction: row-reverse;
-       justify-content: flex-start;
-       align-items: end;
-       
-    }
+    
+    /*************** FOOTER ***************/
+
+.footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
 }
-    
-
-    
- 
-
+.mention-contact {
+    padding-left: 40px;
+    color: white;
+}
+.footer ul{
+    display: flex;
+    margin-right: 20%;
+    flex-direction: row;
+    position: relative;
+    gap: 20px;
+}
+.footer h2{
+    width: 0%;
+    position: absolute;
+    display: flex;
+    justify-content: end;
+}
+}
